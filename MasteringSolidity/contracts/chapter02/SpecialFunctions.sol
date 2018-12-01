@@ -1,5 +1,4 @@
-//Just to remove compilation warnings
-pragma solidity ^0.4.24;
+pragma solidity ^0.4.24; //Just to remove compilation warnings
 /*
 pragma solidity ^0.5.0;
 
@@ -16,10 +15,15 @@ contract SpecialFunctions {
         //Returns bool success, bytes returnData
         (bool successCall, bytes memory returnDataCall)
             = address(otherContract).call(payload);
+        require(successCall);
+
         (bool successDCall, bytes memory returnDataDcall)
             = address(otherContract).delegatecall(payload);
+         require(successDCall);
+
         (bool successSCall, bytes memory returnDataSCall)
             = address(otherContract).staticcall(payload);
+        require(successSCall);
     }
 }
 */
