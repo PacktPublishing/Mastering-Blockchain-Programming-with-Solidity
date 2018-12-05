@@ -14,7 +14,11 @@ contract MultiReturn {
     }
 
     //Example to return multiple values without return statement
-    function getDataWithoutReturnStatement() internal pure returns(uint a, uint b) {
+    function getDataWithoutReturnStatement()
+        internal
+        pure
+        returns(uint a, uint b)
+    {
         a = 1;
         b = 2;
     }

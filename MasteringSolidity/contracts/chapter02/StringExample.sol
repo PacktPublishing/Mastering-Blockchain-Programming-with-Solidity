@@ -21,6 +21,4 @@ contract OtherContract {
     function getString() public view returns (string) {
         return str;
     }
-
-
 }

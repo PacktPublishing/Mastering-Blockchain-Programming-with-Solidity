@@ -14,10 +14,14 @@ contract CallExample {
         require(
             otherContract.call(bytes4(keccak256("methodName(string,uint256)")),
             param1,
-            param2));
+            param2)
+        );
         require(
-            otherContract.delegatecall(bytes4(keccak256("methodName(string,uint256)")),
+            otherContract.delegatecall(
+                bytes4(keccak256("methodName(string,uint256)")
+            ),
             param1,
-            param2));
+            param2)
+        );
     }
 }
