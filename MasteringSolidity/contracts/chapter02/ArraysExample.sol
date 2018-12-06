@@ -7,6 +7,7 @@ contract ArraysExample {
         for(uint i = 0; i < _owners.length ; i++) {
             uint newLength = owners.push(_owners[i]);
         }
+        assert(newLength > 0);
     }
 
     function removeLast() public {

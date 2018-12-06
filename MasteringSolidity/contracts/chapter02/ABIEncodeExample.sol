@@ -59,5 +59,9 @@ contract ABIEncodeExample {
 
     function testMethod(uint _a, uint8 _b) public view {
         //...
+        //Just to remove compilation warnings
+        assert(_a > 0);
+        assert(_b > 0);
+        assert(uInt > 0);
     }
 }
