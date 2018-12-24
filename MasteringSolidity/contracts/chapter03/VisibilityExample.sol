@@ -5,8 +5,8 @@ contract SuperContract {
 
     function multiply(uint _a) private pure returns (uint) { return _a * 2; }
     function setData(uint _a) internal { data = _a; }
-    function externalFn() external returns (uint) { /*...*/ }
-    function publicFn() public returns (uint) { /*...*/ }
+    function externalFn() external returns (uint) { data = 99; }
+    function publicFn() public returns (uint) { data = 100; }
 }
 
 contract VisibilityExample is SuperContract {
