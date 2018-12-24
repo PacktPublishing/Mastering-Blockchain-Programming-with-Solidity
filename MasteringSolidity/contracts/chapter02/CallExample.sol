@@ -8,6 +8,7 @@ contract CallExample {
         uint param2 = 10;
 
         /* solhint-disable */
+        /* solium-disable */
         //With multiple parameters
         require(otherContract.call("methodName", param1, param2));
         require(otherContract.delegatecall("methodName", param1, param2));
@@ -19,11 +20,10 @@ contract CallExample {
             param2)
         );
         require(
-            otherContract.delegatecall(
-                bytes4(keccak256("methodName(string,uint256)")
-            ),
-            param1,
-            param2)
+            otherContract.delegatecall(bytes4
+            (
+                keccak256("methodName(string,uint256)")), param1, param2
+            )
         );
         /* solhint-enable */
     }

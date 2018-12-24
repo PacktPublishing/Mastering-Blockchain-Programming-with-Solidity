@@ -37,17 +37,20 @@ contract OraclizeService {
 
 
 contract OracleUser {
-    modifier onlyOracle {
-        require(msg.sender == address(oraclizeService),
-            "Only oracle can call this.");
-        _;
-    }
 
     // known contract address of Oraclize Service
     OraclizeService public constant oraclizeService =
-        OraclizeService(0x611B947ec990Ba4e1655BF1A37586467144A2D65);
+    OraclizeService(0x611B947ec990Ba4e1655BF1A37586467144A2D65);
 
     event ResponseReceived(uint requestID, bytes response);
+
+    modifier onlyOracle {
+        require
+        (
+            msg.sender == address(oraclizeService), "Only oracle can call this."
+        );
+        _;
+    }
 
     function getUSDRate() public {
         oraclizeService.query("USD", this.queryResponse);

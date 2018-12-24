@@ -39,6 +39,6 @@ contract ValueStorage2 is ValueStorage {
     }
 }
 
+//solium-disable-next-line no-empty-blocks
 contract InheritanceExample1 is ValueStorage1, ValueStorage2 {
-
 }

@@ -11,6 +11,7 @@
     "indentation": [
       "error",
       4
-    ]
+    ],
+    "error-reason": "off"
   }
 }
