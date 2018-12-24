@@ -1,4 +1,4 @@
-pragma solidity ^0.4.24; //Just to remove compilation warnings
+pragma solidity 0.4.25; //Just to remove compilation warnings
 /*
 pragma solidity ^0.5.0;
 
