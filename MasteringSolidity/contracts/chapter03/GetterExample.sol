@@ -1,8 +1,9 @@
 pragma solidity 0.4.25;
 
+
 contract GetterExample {
     uint public data = 25;
-    uint[2] public array = [10,20];
+    uint[2] public array = [10, 20];
 
     /*
     //Overrides getter function of `data` state variable, if defined
@@ -18,8 +19,10 @@ contract GetterExample {
     */
 }
 
+
 contract ExternalContract {
-    GetterExample ge = new GetterExample();
+    GetterExample public ge = new GetterExample();
+
     function getData() public view returns (uint) {
         return ge.data();
     }

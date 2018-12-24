@@ -6,7 +6,7 @@ contract EnumExample {
     //Enum for LoanStatus
     enum LoanStatus {Created, Funded, Finished, Defaulted}
 
-    LoanStatus status = LoanStatus.Funded;
+    LoanStatus public status = LoanStatus.Funded;
 
     //To get the current LoanStatus
     function getStatus() public view returns (LoanStatus) {

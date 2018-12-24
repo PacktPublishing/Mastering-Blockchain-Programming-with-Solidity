@@ -1,5 +1,6 @@
 pragma solidity 0.4.25;
 
+
 interface ExampleInterface {
     function transfer(address _to, uint _amount) external returns (bool);
 }

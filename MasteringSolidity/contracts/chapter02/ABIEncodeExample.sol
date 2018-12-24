@@ -1,10 +1,12 @@
 pragma solidity 0.4.25;
 
+
 contract ABIEncodeExample {
-    address addr;
-    uint uInt; //uint = uint256
-    uint8 uInt8;
-    uint16 uInt16;
+    address public addr;
+    uint public uInt; //uint = uint256
+    uint8 public uInt8;
+    uint16 public uInt16;
+
     constructor() public {
         addr = 0x611B947ec990Ba4e1655BF1A37586467144A2D65;
         uInt = 20;

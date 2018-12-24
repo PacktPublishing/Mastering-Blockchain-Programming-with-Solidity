@@ -3,10 +3,11 @@ pragma solidity 0.4.25;
 import "./ControlledAddressList.sol";
 import "openzeppelin-solidity/contracts/ownership/Ownable.sol";
 
+
 contract TokenList is Ownable {
 
     using ControlledAddressList for ControlledAddressList.Data;
-    ControlledAddressList.Data data;
+    ControlledAddressList.Data private data;
 
     function add(address _token) public onlyOwner returns (bool) {
         return data.enable(_token);

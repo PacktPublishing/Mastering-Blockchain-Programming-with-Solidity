@@ -3,6 +3,7 @@ pragma solidity 0.4.25;
 import "openzeppelin-solidity/contracts/token/ERC20/ERC20.sol";
 
 contract DetailedERC20 is ERC20 {
+
     string public name;
     string public symbol;
     uint8 public decimals;
@@ -15,6 +16,8 @@ contract DetailedERC20 is ERC20 {
 }
 
 contract MyToken is DetailedERC20("MyToken", "MTKN", 18) {
+    mapping(address => uint) public balances;
+    //...
 }
 
 contract MyToken2 is DetailedERC20 {

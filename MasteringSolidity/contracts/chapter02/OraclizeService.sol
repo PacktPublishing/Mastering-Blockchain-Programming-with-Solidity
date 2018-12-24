@@ -1,14 +1,16 @@
 pragma solidity 0.4.25;
 
+
 contract OraclizeService {
 
-    address authorized = 0xefd8eD39D00D98bf43787ad0cef9afee2B5DB34F;
+    address public authorized = 0xefd8eD39D00D98bf43787ad0cef9afee2B5DB34F;
+    QueryData[] private queries;
+
     modifier onlyAuthorized() {
         require(msg.sender == authorized);
         _;
     }
 
-    QueryData[] queries;
     struct QueryData {
         bytes currency;
         function(uint, bytes memory)
@@ -33,15 +35,18 @@ contract OraclizeService {
     }
 }
 
+
 contract OracleUser {
     modifier onlyOracle {
         require(msg.sender == address(oraclizeService),
             "Only oracle can call this.");
         _;
     }
+
     // known contract address of Oraclize Service
-    OraclizeService constant oraclizeService =
+    OraclizeService public constant oraclizeService =
         OraclizeService(0x611B947ec990Ba4e1655BF1A37586467144A2D65);
+
     event ResponseReceived(uint requestID, bytes response);
 
     function getUSDRate() public {

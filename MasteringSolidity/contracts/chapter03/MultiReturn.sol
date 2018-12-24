@@ -1,5 +1,6 @@
 pragma solidity 0.4.25;
 
+
 contract MultiReturn {
 
     function sum() public pure returns (uint) {

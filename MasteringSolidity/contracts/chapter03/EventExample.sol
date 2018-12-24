@@ -1,5 +1,6 @@
 pragma solidity 0.4.25;
 
+
 contract EventExample {
     uint public balance;
     event Deposited(address indexed from, uint amount);

@@ -1,5 +1,6 @@
 pragma solidity 0.4.25;
 
+
 library ControlledAddressList {
 
     struct Data {

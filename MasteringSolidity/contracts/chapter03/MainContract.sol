@@ -1,13 +1,16 @@
 pragma solidity 0.4.25;
 
+
 contract ChildContract {
     uint public id;
     uint public balance;
+
     constructor(uint _id) public payable {
         id = _id;
         balance = msg.value;
     }
 }
+
 
 contract MainContract {
     ChildContract[] public register;

@@ -1,5 +1,6 @@
 pragma solidity 0.4.25;
 
+
 contract Ownable {
     address public owner;
 
@@ -13,11 +14,13 @@ contract Ownable {
     }
 }
 
+
 contract ModifierExample is Ownable {
     enum Status {INIT, PENDING, INPROCESS, PROCESSED}
     Status public status;
 
     event StatusChanged(Status status);
+
     modifier logAtEnd(Status _status) {
         _;
         emit StatusChanged(_status);

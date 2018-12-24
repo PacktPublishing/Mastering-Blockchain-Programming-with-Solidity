@@ -1,5 +1,6 @@
 pragma solidity 0.4.25;
 
+
 contract ConstructorExample {
 
     string public tokenName;
@@ -13,6 +14,7 @@ contract ConstructorExample {
     }
     //...
 }
+
 
 contract NoConstructor {
     string public tokenName = "Sample Token";
