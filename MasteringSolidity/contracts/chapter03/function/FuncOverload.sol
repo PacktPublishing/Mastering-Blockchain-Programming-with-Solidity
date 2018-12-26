@@ -1,8 +1,9 @@
 pragma solidity 0.4.25;
 
+
 contract FuncOverload {
 
-    address owner;
+    address public owner;
 
     constructor() public {
         owner = msg.sender;

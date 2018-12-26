@@ -1,7 +1,8 @@
 pragma solidity 0.4.25;
 
+
 contract FallbackFunctionExample {
-    uint weiReceived;
+    uint public weiReceived;
 
     function() external payable {
         weiReceived += msg.value;

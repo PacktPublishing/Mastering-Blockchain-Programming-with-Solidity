@@ -1,5 +1,6 @@
 pragma solidity 0.4.25;
 
+
 contract Ownable {
     address public owner;
 
@@ -13,6 +14,7 @@ contract Ownable {
     }
 }
 
+
 contract ValueStorage is Ownable {
     uint public value = 2;
 
@@ -23,6 +25,7 @@ contract ValueStorage is Ownable {
     //...
 }
 
+
 contract ValueStorage1 is ValueStorage {
 
     function update() public {
@@ -30,6 +33,7 @@ contract ValueStorage1 is ValueStorage {
         ValueStorage.update();
     }
 }
+
 
 contract ValueStorage2 is ValueStorage {
 
@@ -39,6 +43,11 @@ contract ValueStorage2 is ValueStorage {
     }
 }
 
-//solium-disable-next-line no-empty-blocks
+
 contract InheritanceExample1 is ValueStorage1, ValueStorage2 {
+    string public name;
+
+    constructor(string _name) public {
+        name = _name;
+    }
 }
