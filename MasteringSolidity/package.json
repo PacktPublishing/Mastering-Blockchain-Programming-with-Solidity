@@ -7,6 +7,8 @@
     "test": "test"
   },
   "dependencies": {
+    "bignumber.js": "^8.0.1",
+    "chai": "^4.2.0",
     "openzeppelin-solidity": "^1.12.0"
   },
   "devDependencies": {},
