@@ -1,6 +1,6 @@
-pragma solidity 0.4.25; //Just to remove compilation warnings
-/*
-pragma solidity ^0.5.0;
+pragma solidity 0.4.25;
+
+//pragma solidity ^0.5.0;
 
 contract SpecialFunctions {
 
@@ -13,6 +13,7 @@ contract SpecialFunctions {
 
         //Takes only bytes memory as argument
         //Returns bool success, bytes returnData
+        /* //works with Solidity 0.5.0
         (bool successCall, bytes memory returnDataCall)
             = address(otherContract).call(payload);
         require(successCall);
@@ -24,6 +25,13 @@ contract SpecialFunctions {
         (bool successSCall, bytes memory returnDataSCall)
             = address(otherContract).staticcall(payload);
         require(successSCall);
+        */
+
+        //Solidity 0.4.25
+        /* solium-disable */
+        require(address(otherContract).call(payload));
+
+        require(address(otherContract).delegatecall(payload));
+        /* solium-enable */
     }
 }
-*/
