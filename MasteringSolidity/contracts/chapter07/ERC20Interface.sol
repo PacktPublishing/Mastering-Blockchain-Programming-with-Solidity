@@ -1,10 +1,11 @@
-pragma solidity ^0.4.25;
+pragma solidity 0.4.25;
+
 
 /**
  * @title ERC20 interface
  * @dev see https://github.com/ethereum/EIPs/issues/20
  */
-interface IERC20 {
+interface ERC20Interface {
     function transfer(address to, uint256 value) external returns (bool);
 
     function approve(address spender, uint256 value) external returns (bool);
