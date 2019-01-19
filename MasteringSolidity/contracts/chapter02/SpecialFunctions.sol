@@ -28,10 +28,12 @@ contract SpecialFunctions {
         */
 
         //Solidity 0.4.25
+        /* solhint-disable */
         /* solium-disable */
         require(address(otherContract).call(payload));
 
         require(address(otherContract).delegatecall(payload));
         /* solium-enable */
+        /* solhint-enable */
     }
 }
