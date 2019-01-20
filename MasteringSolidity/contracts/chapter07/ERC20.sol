@@ -11,6 +11,7 @@ import "./SafeMath.sol";
  * https://github.com/ethereum/EIPs/blob/master/EIPS/eip-20.md
  */
 contract ERC20 is ERC20Interface {
+
     using SafeMath for uint256;
 
     mapping(address => uint256) internal balances;
@@ -21,6 +22,7 @@ contract ERC20 is ERC20Interface {
 
     /**
      * @dev Total number of tokens in existence
+     * @return An uint256 value representing total supply of token.
      */
     function totalSupply() public view returns (uint256) {
         return totalSupply_;
@@ -67,10 +69,12 @@ contract ERC20 is ERC20Interface {
     }
 
     /**
-     * @dev Approve the passed address to spend the specified amount of tokens on behalf of msg.sender.
-     * Beware that changing an allowance with this method brings the risk that someone may use both the old
-     * and the new allowance by unfortunate transaction ordering. One possible solution to mitigate this
-     * race condition is to first reduce the spender's allowance to 0 and set the desired value afterwards:
+     * @dev Approve the passed address to spend the specified amount of tokens
+     * on behalf of msg.sender. Beware that changing an allowance with this
+     * method brings the risk that someone may use both the old and the new
+     * allowance by unfortunate transaction ordering. One possible solution to
+     * mitigate this race condition is to first reduce the spender's allowance
+     * to 0 and set the desired value afterwards:
      * https://github.com/ethereum/EIPs/issues/20#issuecomment-263524729
      * @param _spender The address which will spend the funds.
      * @param _value The amount of tokens to be spent.
@@ -82,10 +86,12 @@ contract ERC20 is ERC20Interface {
     }
 
     /**
-     * @dev Function to check the amount of tokens that an owner allowed to a spender.
+     * @dev Function to check the amount of tokens that an owner allowed to a
+     * spender.
      * @param _owner address The address which owns the funds.
      * @param _spender address The address which will spend the funds.
-     * @return A uint256 specifying the amount of tokens still available for the spender.
+     * @return A uint256 specifying the amount of tokens still available for
+     * the spender.
      */
     function allowance(
         address _owner,
@@ -106,5 +112,4 @@ contract ERC20 is ERC20Interface {
     function balanceOf(address _owner) public view returns (uint256) {
         return balances[_owner];
     }
-
 }
