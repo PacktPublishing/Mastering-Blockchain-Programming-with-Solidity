@@ -13,8 +13,9 @@
   },
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "sh lint.sh"
   },
-  "author": "",
+  "author": "Jitendra Chittoda",
   "license": "ISC"
 }
