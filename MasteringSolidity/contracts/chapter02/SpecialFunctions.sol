@@ -14,15 +14,15 @@ contract SpecialFunctions {
         //Takes only bytes memory as argument
         //Returns bool success, bytes returnData
         //works with Solidity 0.5.0
-        (bool successCall, bytes memory returnDataCall)
+        (bool successCall, /*bytes memory returnDataCall*/)
             = address(otherContract).call(payload);
         require(successCall);
 
-        (bool successDCall, bytes memory returnDataDcall)
+        (bool successDCall, /*bytes memory returnDataDcall*/)
             = address(otherContract).delegatecall(payload);
          require(successDCall);
 
-        (bool successSCall, bytes memory returnDataSCall)
+        (bool successSCall, /*bytes memory returnDataSCall*/)
             = address(otherContract).staticcall(payload);
         require(successSCall);
 
