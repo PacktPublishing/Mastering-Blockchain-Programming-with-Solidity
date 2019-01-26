@@ -9,14 +9,6 @@ pragma solidity 0.5.3;
  * @dev Actual interface that you can use is ERC20Interface.sol
  */
 interface ERC20FullInterface {
-
-    //Below are the OPTIONAL functions of API
-    function name() external view returns (string memory);
-
-    function symbol() external view returns (string memory);
-
-    function decimals() external view returns (uint8);
-
     //Below are the functions an implementation MUST have
     function transfer(address to, uint256 value) external returns (bool);
 
@@ -33,4 +25,13 @@ interface ERC20FullInterface {
     event Transfer(address indexed from, address indexed to, uint256 value);
 
     event Approval(address indexed owner, address indexed spender, uint256 value);
+
+    //Below are the OPTIONAL functions of API
+    function name() external view returns (string memory);
+
+    function symbol() external view returns (string memory);
+
+    function decimals() external view returns (uint8);
+
+
 }

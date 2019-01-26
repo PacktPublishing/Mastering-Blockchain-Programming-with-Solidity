@@ -11,25 +11,24 @@ contract SpecialFunctions {
             "methodName(string)",
             "stringParam");
 
+        /* solhint-disable */
+        /* solium-disable */
         //Takes only bytes memory as argument
         //Returns bool success, bytes returnData
         //works with Solidity 0.5.0
-        (bool successCall, /*bytes memory returnDataCall*/)
-            = address(otherContract).call(payload);
-        require(successCall);
+        bool success;
+        bytes memory returnData;
+        (success, returnData) = address(otherContract).call(payload);
+        require(success);
 
-        (bool successDCall, /*bytes memory returnDataDcall*/)
-            = address(otherContract).delegatecall(payload);
-         require(successDCall);
+        (success, returnData) = address(otherContract).delegatecall(payload);
+        require(success);
 
-        (bool successSCall, /*bytes memory returnDataSCall*/)
-            = address(otherContract).staticcall(payload);
-        require(successSCall);
+        (success, returnData) = address(otherContract).staticcall(payload);
+        require(success);
 
 
         //Solidity 0.4.25
-        /* solhint-disable */
-        /* solium-disable */
         /*
         require(address(otherContract).call(payload));
 

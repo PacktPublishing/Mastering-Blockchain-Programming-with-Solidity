@@ -2,6 +2,7 @@ pragma solidity 0.5.3;
 
 import "./ERC20.sol";
 
+
 contract ERC20Advanced is ERC20 {
 
     /**

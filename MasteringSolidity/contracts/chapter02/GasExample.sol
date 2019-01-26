@@ -9,11 +9,11 @@ contract GasExample {
         bytes memory returnData;
         /* gas adjustments */
         (result, returnData) = otherContract.call.gas(1000000)(
-                abi.encodeWithSignature("methodName(string)", "param1"));
+            abi.encodeWithSignature("methodName(string)", "param1"));
         require(result);
 
         (result, returnData) = otherContract.delegatecall.gas(1000000)(
-                abi.encodeWithSignature("methodName(string)", "param1"));
+            abi.encodeWithSignature("methodName(string)", "param1"));
         require(result);
 
         /* solhint-disable */
