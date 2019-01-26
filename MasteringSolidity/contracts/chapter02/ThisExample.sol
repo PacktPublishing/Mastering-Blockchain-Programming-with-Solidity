@@ -28,7 +28,7 @@ contract ThisExample {
          * sets the current contract address after deployment.
          * Auto converts to address.
          */
-        currentContractAddress = this;
+        currentContractAddress = address(this);
         
         /*
          * Recommended way for address.
@@ -57,6 +57,8 @@ contract ThisExample {
          * `owner` address. Here `owner` can be an "Externally Owner Account" 
          * or a "Contract Account".
          */
-        selfdestruct(owner);
+        //Convert from `address` to `address payable`
+        address payable payableOwner = address(uint160(owner));
+        selfdestruct(payableOwner);
     }
 }

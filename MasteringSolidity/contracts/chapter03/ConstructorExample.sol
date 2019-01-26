@@ -7,7 +7,7 @@ contract ConstructorExample {
     string public symbol;
     address public owner;
 
-    constructor(string _tokenName, string _symbol) public {
+    constructor(string memory _tokenName, string memory _symbol) public {
         owner = msg.sender;
         tokenName = _tokenName;
         symbol = _symbol;

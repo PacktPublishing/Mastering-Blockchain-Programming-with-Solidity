@@ -21,7 +21,7 @@ contract OraclizeService {
     event NewRequestEvent(uint requestID);
 
     function query(
-        bytes _currency,
+        bytes memory _currency,
         function(uint, bytes memory) external returns(bool) _callbackFn
     ) public {
         //Registering callback
@@ -29,7 +29,7 @@ contract OraclizeService {
         emit NewRequestEvent(queries.length - 1);
     }
 
-    function reply(uint requestID, bytes response) public onlyAuthorized {
+    function reply(uint requestID, bytes memory response) public onlyAuthorized {
         require(queries[requestID].callbackFunction(requestID, response));
         delete queries[requestID]; //release storage
     }
@@ -56,7 +56,7 @@ contract OracleUser {
         oraclizeService.query("USD", this.queryResponse);
     }
 
-    function queryResponse(uint _requestID, bytes _response)
+    function queryResponse(uint _requestID, bytes memory _response)
     public onlyOracle
     returns (bool) {
         // Use the response data

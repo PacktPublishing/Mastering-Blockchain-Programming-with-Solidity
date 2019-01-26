@@ -49,6 +49,8 @@ contract DeploymentExample is Ownable {
      * @dev Destroy the contract and send all ether balance to owner.
      */
     function kill() public onlyOwner {
-        selfdestruct(owner);
+        //Convert from `address` to `address payable`
+        address payable payableOwner = address(uint160(owner()));
+        selfdestruct(payableOwner);
     }
 }

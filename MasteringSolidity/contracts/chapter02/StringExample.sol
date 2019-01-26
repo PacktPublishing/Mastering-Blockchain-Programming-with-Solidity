@@ -9,7 +9,7 @@ contract StringExample {
         internalCall(oc.getString());
     }
 
-    function internalCall(string str) internal {
+    function internalCall(string memory str) internal {
         emit LOG(str);
     }
 
@@ -19,11 +19,11 @@ contract StringExample {
 contract OtherContract {
     string public str;
 
-    constructor(string _str) public {
+    constructor(string memory _str) public {
         str = _str;
     }
 
-    function getString() public view returns (string) {
+    function getString() public view returns (string memory) {
         return str;
     }
 }

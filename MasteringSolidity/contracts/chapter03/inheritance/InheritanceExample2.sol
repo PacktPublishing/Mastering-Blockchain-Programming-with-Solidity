@@ -47,7 +47,7 @@ contract ValueStorage2 is ValueStorage {
 contract InheritanceExample2 is ValueStorage1, ValueStorage2 {
     string public name;
 
-    constructor(string _name) public {
+    constructor(string memory _name) public {
         name = _name;
     }
 }

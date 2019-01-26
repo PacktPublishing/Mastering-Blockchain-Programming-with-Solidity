@@ -11,9 +11,9 @@ pragma solidity 0.5.3;
 interface ERC20FullInterface {
 
     //Below are the OPTIONAL functions of API
-    function name() external view returns (string);
+    function name() external view returns (string memory);
 
-    function symbol() external view returns (string);
+    function symbol() external view returns (string memory);
 
     function decimals() external view returns (uint8);
 

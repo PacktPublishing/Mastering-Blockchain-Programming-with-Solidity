@@ -5,9 +5,10 @@ contract ArraysExample {
     //Dynamic Array
     address[] public owners;
 
-    constructor(address[] _owners) public {
+    constructor(address[] memory _owners) public {
+        uint newLength;
         for (uint i = 0; i < _owners.length; i++) {
-            uint newLength = owners.push(_owners[i]);
+            newLength = owners.push(_owners[i]);
         }
         assert(newLength > 0);
     }

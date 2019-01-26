@@ -22,7 +22,7 @@ contract MainContract {
         register.push(childContract);
     }
 
-    function createChildContract(uint _id) public returns(address) {
+    function createChildContract(uint _id) public returns(ChildContract) {
         ChildContract newChild = new ChildContract(_id);
         register.push(newChild);
         return newChild;
@@ -32,7 +32,7 @@ contract MainContract {
     function createChildAndPay(uint _id, uint _amount)
         public
         payable
-        returns(address)
+        returns(ChildContract)
     {
         require(msg.value == _amount);
         ChildContract newChild = (new ChildContract).value(_amount)(_id);

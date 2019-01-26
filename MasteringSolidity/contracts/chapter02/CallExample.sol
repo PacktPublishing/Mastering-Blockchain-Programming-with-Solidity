@@ -10,21 +10,15 @@ contract CallExample {
         /* solhint-disable */
         /* solium-disable */
         //With multiple parameters
-        require(otherContract.call("methodName", param1, param2));
-        require(otherContract.delegatecall("methodName", param1, param2));
+        bool result;
+        bytes memory returnData;
+        (result, returnData) = otherContract.call(
+            abi.encodeWithSignature("methodName(uint256,uint256)", param1, param2));
+        require(result);
 
-        //With signatures
-        require(
-            otherContract.call(bytes4(keccak256("methodName(string,uint256)")),
-            param1,
-            param2)
-        );
-        require(
-            otherContract.delegatecall(bytes4
-            (
-                keccak256("methodName(string,uint256)")), param1, param2
-            )
-        );
+        (result, returnData) = otherContract.delegatecall(
+            abi.encodeWithSignature("methodName(uint256,uint256)", param1, param2));
+
         /* solhint-enable */
     }
 }

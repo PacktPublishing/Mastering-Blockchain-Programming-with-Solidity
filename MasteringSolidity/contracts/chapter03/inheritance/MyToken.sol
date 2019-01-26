@@ -9,7 +9,7 @@ contract DetailedERC20 is ERC20 {
     string public symbol;
     uint8 public decimals;
 
-    constructor(string _name, string _symbol, uint8 _decimals ) public {
+    constructor(string memory _name, string memory _symbol, uint8 _decimals ) public {
         name = _name;
         symbol = _symbol;
         decimals = _decimals;
@@ -27,8 +27,8 @@ contract MyToken2 is DetailedERC20 {
     address public owner;
 
     constructor (
-        string _name,
-        string _symbol,
+        string memory _name,
+        string memory _symbol,
         uint8 _decimals
     ) public DetailedERC20(_name, _symbol, _decimals) {
         owner = msg.sender;
