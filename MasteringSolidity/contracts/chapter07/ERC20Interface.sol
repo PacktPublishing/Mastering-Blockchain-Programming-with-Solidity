@@ -18,7 +18,9 @@ interface ERC20Interface {
 
     function allowance(address owner, address spender) external view returns (uint256);
 
+    /* solhint-disable no-simple-event-func-name */
     event Transfer(address indexed from, address indexed to, uint256 value);
 
     event Approval(address indexed owner, address indexed spender, uint256 value);
+
 }
