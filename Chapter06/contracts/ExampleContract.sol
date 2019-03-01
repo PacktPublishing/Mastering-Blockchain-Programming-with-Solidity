@@ -1,4 +1,4 @@
-pragma solidity ^0.5.3;
+pragma solidity ^0.5.0;
 
 /**
  * WARNING: This contract is only for linters to show warning messages.
