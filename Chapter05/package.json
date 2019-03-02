@@ -1,0 +1,23 @@
+{
+  "name": "chapter05",
+  "version": "1.0.0",
+  "description": "Chapter05",
+  "main": "truffle-config.js",
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/PacktPublishing/Mastering-Solidity.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jitendra Chittoda",
+  "license": "ISC",
+  "dependencies": {
+    "bignumber.js": "^8.1.1",
+    "chai": "^4.2.0",
+    "openzeppelin-solidity": "2.1.1"
+  }
+}
