@@ -16,6 +16,7 @@
   "author": "Jitendra Chittoda",
   "license": "ISC",
   "dependencies": {
-    "openzeppelin-solidity": "2.2.0"
+    "openzeppelin-solidity": "2.1.1",
+    "truffle-hdwallet-provider": "^1.0.6"
   }
 }
