@@ -1,12 +1,15 @@
 const MSTToken = artifacts.require("MSTToken");
 const MSTCrowdsale = artifacts.require("MSTCrowdsale");
 
-module.exports = function(deployer, network, accounts) {
+module.exports = async function(deployer, network, accounts) {
   var owner = accounts[0];
   var wallet = accounts[1];
 
-  deployer.deploy(MSTToken, "Mastering Solidity Token", "MST", 18);
+  await deployer.deploy(MSTToken, "Mastering Solidity Token", "MST", 18);
 
-  var startTime = 1554076800; // 01 Apr 2019 00:00:00 GMT
-  //deployer.deploy(MSTCrowdsale, startTime, wallet, MSTToken.address)
+  var milliseconds = (new Date).getTime(); // Today time
+  var currentTimeInSeconds = parseInt(milliseconds / 1000);
+  var startTime = currentTimeInSeconds + 86400; // startTime next day
+  await deployer.deploy(MSTCrowdsale, startTime, wallet, MSTToken.address)
+
 };
