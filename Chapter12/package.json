@@ -1,0 +1,21 @@
+{
+  "name": "chapter12",
+  "version": "1.0.0",
+  "description": "Chapter12",
+  "main": "truffle-config.js",
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/PacktPublishing/Mastering-Solidity.git"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "Jitendra Chittoda",
+  "license": "ISC",
+  "dependencies": {
+    "openzeppelin-solidity": "2.2.0"
+  }
+}
