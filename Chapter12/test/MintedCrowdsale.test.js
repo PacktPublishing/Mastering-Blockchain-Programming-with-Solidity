@@ -1,7 +1,7 @@
 const { BN, ether, shouldFail } = require('openzeppelin-test-helpers');
 const { shouldBehaveLikeMintedCrowdsale } = require('./MintedCrowdsale.behavior');
 
-const MintedCrowdsaleImpl = artifacts.require('MintedCrowdsaleImpl');
+const MSTMintedCrowdsaleMock = artifacts.require('MSTMintedCrowdsaleMock');
 const MSTToken = artifacts.require('MSTToken');
 const ERC20 = artifacts.require('ERC20');
 
@@ -12,7 +12,7 @@ contract('MintedCrowdsale', function ([_, deployer, investor, wallet, purchaser]
   describe('using ERC20Mintable', function () {
     beforeEach(async function () {
       this.token = await MSTToken.new({ from: deployer });
-      this.crowdsale = await MintedCrowdsaleImpl.new(rate, wallet, this.token.address);
+      this.crowdsale = await MSTMintedCrowdsaleMock.new(rate, wallet, this.token.address);
 
       await this.token.addMinter(this.crowdsale.address, { from: deployer });
       await this.token.renounceMinter({ from: deployer });
