@@ -5,8 +5,8 @@ import "openzeppelin-solidity/contracts/math/SafeMath.sol";
 import "openzeppelin-solidity/contracts/crowdsale/validation/TimedCrowdsale.sol";
 import "openzeppelin-solidity/contracts/crowdsale/emission/MintedCrowdsale.sol";
 import "openzeppelin-solidity/contracts/crowdsale/validation/CappedCrowdsale.sol";
-import "./MSTToken.sol";
 import "openzeppelin-solidity/contracts/token/ERC20/IERC20.sol";
+
 
 contract MSTCrowdsale is CappedCrowdsale, TimedCrowdsale, MintedCrowdsale {
     using SafeMath for uint256;
