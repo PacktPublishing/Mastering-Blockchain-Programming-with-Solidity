@@ -12,11 +12,12 @@ contract MSTCrowdsale is CappedCrowdsale, TimedCrowdsale, MintedCrowdsale {
     using SafeMath for uint256;
 
     constructor(
+        uint256 _rate,
         uint256 _openingTime,
         address payable _wallet,
         IERC20 _token
     )
-        Crowdsale(1000, _wallet, _token)
+        Crowdsale(_rate, _wallet, _token)
         TimedCrowdsale(_openingTime, _openingTime.add(90 days))
         CappedCrowdsale(10000 ether)
         public
