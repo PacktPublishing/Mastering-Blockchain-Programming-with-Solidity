@@ -120,11 +120,178 @@ contract('MSTToken', function (accounts) {
     });
 
     it('should increaseAllowance', async function () {
+        assert(await mstToken.balanceOf(user1), 1000);
+        assert(await mstToken.balanceOf(user2), 0);
+        assert(await mstToken.balanceOf(other), 0);
+        assert(await mstToken.allowance(user1, user2), 0);
+
+        await mstToken.approve(user2, 500, {from: user1});
+
+        assert(await mstToken.balanceOf(user1), 1000);
+        assert(await mstToken.balanceOf(user2), 0);
+        assert(await mstToken.balanceOf(other), 0);
+        assert(await mstToken.allowance(user1, user2), 500);
+
+        await mstToken.increaseAllowance(user2, 250, {from: user1});
+
+        assert(await mstToken.balanceOf(user1), 1000);
+        assert(await mstToken.balanceOf(user2), 0);
+        assert(await mstToken.balanceOf(other), 0);
+        assert(await mstToken.allowance(user1, user2), 750);
 
     });
 
     it('should decreaseAllowance', async function () {
+        assert(await mstToken.balanceOf(user1), 1000);
+        assert(await mstToken.balanceOf(user2), 0);
+        assert(await mstToken.balanceOf(other), 0);
+        assert(await mstToken.allowance(user1, user2), 0);
 
+        await mstToken.approve(user2, 500, {from: user1});
+
+        assert(await mstToken.balanceOf(user1), 1000);
+        assert(await mstToken.balanceOf(user2), 0);
+        assert(await mstToken.balanceOf(other), 0);
+        assert(await mstToken.allowance(user1, user2), 500);
+
+        await mstToken.decreaseAllowance(user2, 250, {from: user1});
+
+        assert(await mstToken.balanceOf(user1), 1000);
+        assert(await mstToken.balanceOf(user2), 0);
+        assert(await mstToken.balanceOf(other), 0);
+        assert(await mstToken.allowance(user1, user2), 250);
+
+    });
+
+  });
+
+  describe('as ERC20Pausable', async function () {
+    beforeEach(async function() {
+      mstToken = await MSTToken.new("MSTTest Token", "MST", 18);
+      await mstToken.mint(user1, 1000);
+    });
+
+    it('should be unpaused by default', async function () {
+        assert.equal(await mstToken.paused(), false);
+    });
+
+    it('should pause', async function () {
+        assert.equal(await mstToken.paused(), false);
+        await mstToken.pause();
+        assert.equal(await mstToken.paused(), true);
+    });
+
+    it('should unpause', async function () {
+        assert.equal(await mstToken.paused(), false);
+        await mstToken.pause();
+        assert.equal(await mstToken.paused(), true);
+        await mstToken.unpause();
+        assert.equal(await mstToken.paused(), false);
+    });
+
+    it('should not allow transfer when paused', async function () {
+        assert.equal(await mstToken.paused(), false);
+        await mstToken.pause();
+        assert.equal(await mstToken.paused(), true);
+
+        await shouldFail.reverting(
+            mstToken.transfer(user2, 100, {from: user1})
+        );
+
+        assert(await mstToken.balanceOf(user1), 1000);
+        assert(await mstToken.balanceOf(user2), 0);
+    });
+
+    it('should not allow transferFrom when paused', async function () {
+        assert(await mstToken.allowance(user1, user2), 0);
+        await mstToken.approve(user2, 500, {from: user1});
+        assert(await mstToken.allowance(user1, user2), 500);
+
+        assert.equal(await mstToken.paused(), false);
+        await mstToken.pause();
+        assert.equal(await mstToken.paused(), true);
+
+        await shouldFail.reverting(
+            mstToken.transferFrom(user1, user2, 100, {from: user2})
+        );
+
+        assert(await mstToken.allowance(user1, user2), 500);
+        assert(await mstToken.balanceOf(user1), 1000);
+        assert(await mstToken.balanceOf(user2), 0);
+    });
+
+    it('should not allow approve when paused', async function () {
+        assert.equal(await mstToken.paused(), false);
+        await mstToken.pause();
+        assert.equal(await mstToken.paused(), true);
+
+        assert(await mstToken.allowance(user1, user2), 0);
+        await shouldFail.reverting(
+            mstToken.approve(user2, 500, {from: user1})
+        );
+        assert(await mstToken.allowance(user1, user2), 0);
+
+    });
+
+    it('should not allow increaseAllowance when paused', async function () {
+        assert.equal(await mstToken.paused(), false);
+        await mstToken.pause();
+        assert.equal(await mstToken.paused(), true);
+
+        assert(await mstToken.allowance(user1, user2), 0);
+        await shouldFail.reverting(
+            mstToken.increaseAllowance(user2, 500, {from: user1})
+        );
+        assert(await mstToken.allowance(user1, user2), 0);
+
+    });
+
+    it('should not allow decreaseAllowance when paused', async function () {
+        assert.equal(await mstToken.paused(), false);
+        await mstToken.pause();
+        assert.equal(await mstToken.paused(), true);
+
+        assert(await mstToken.allowance(user1, user2), 0);
+        await shouldFail.reverting(
+            mstToken.decreaseAllowance(user2, 500, {from: user1})
+        );
+        assert(await mstToken.allowance(user1, user2), 0);
+
+    });
+
+
+  });
+
+  describe('as ERC20Burnable', async function () {
+    beforeEach(async function() {
+      mstToken = await MSTToken.new("MSTTest Token", "MST", 18);
+      await mstToken.mint(user1, 1000);
+    });
+
+    it('should burn', async function () {
+        assert.equal(await mstToken.balanceOf(user1), 1000);
+        assert.equal(await mstToken.totalSupply(), 1000);
+
+        await mstToken.burn(100, {from: user1});
+
+        assert.equal(await mstToken.balanceOf(user1), 900);
+        assert.equal(await mstToken.totalSupply(), 900);
+    });
+
+    it('should burnFrom', async function () {
+        assert.equal(await mstToken.balanceOf(user1), 1000);
+        assert.equal(await mstToken.balanceOf(user2), 0);
+        assert.equal(await mstToken.allowance(user1, user2), 0);
+        assert.equal(await mstToken.totalSupply(), 1000);
+
+        await mstToken.approve(user2, 200, {from: user1});
+        assert.equal(await mstToken.allowance(user1, user2), 200);
+        await mstToken.burnFrom(user1, 100, {from: user2});
+
+        assert.equal(await mstToken.balanceOf(user1), 900);
+        assert.equal(await mstToken.balanceOf(user2), 0);
+        assert.equal(await mstToken.allowance(user1, user2), 100);
+        assert.equal(await mstToken.totalSupply(), 900);
     });
 
   });

@@ -8,7 +8,9 @@ import "openzeppelin-solidity/contracts/crowdsale/validation/CappedCrowdsale.sol
 import "openzeppelin-solidity/contracts/token/ERC20/IERC20.sol";
 
 
-contract MSTCrowdsale is CappedCrowdsale, TimedCrowdsale, MintedCrowdsale {
+contract MSTCrowdsale is
+    CappedCrowdsale, TimedCrowdsale, MintedCrowdsale {
+
     using SafeMath for uint256;
 
     constructor(
