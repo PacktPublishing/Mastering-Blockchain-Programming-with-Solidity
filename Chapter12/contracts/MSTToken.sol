@@ -17,6 +17,6 @@ contract MSTToken is
         ERC20Detailed(_name, _symbol, _decimals)
         public
     {
-
+        // solium-disable-previous-line no-empty-blocks
     }
 }

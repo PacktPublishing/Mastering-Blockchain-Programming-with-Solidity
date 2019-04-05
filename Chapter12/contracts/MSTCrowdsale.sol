@@ -26,6 +26,6 @@ contract MSTCrowdsale is
         CappedCrowdsale(_cap)
         public
     {
-
+        // solium-disable-previous-line no-empty-blocks
     }
 }
