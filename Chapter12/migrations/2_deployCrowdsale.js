@@ -31,9 +31,9 @@ module.exports = async function(deployer, network, accounts) {
 
   //3. Owner Adds MinterRole for MSTCrowdsale
   var mstToken = await MSTToken.deployed();
-  mstToken.addMinter(MSTCrowdsale.address, {from: owner});
+  mstToken.addMinter(MSTCrowdsale.address);
 
   //4. Owner Renounce Minter
-  mstToken.renounceMinter({from: owner});
+  mstToken.renounceMinter();
 
 };
