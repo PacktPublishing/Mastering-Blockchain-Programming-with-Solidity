@@ -15,5 +15,7 @@
   },
   "author": "Jitendra Chittoda",
   "license": "ISC",
-  "dependencies": {}
+  "dependencies": {
+    "openzeppelin-solidity": "^2.2.0"
+  }
 }
