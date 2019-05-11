@@ -1,8 +1,0 @@
-{
-  "zosversion": "2.2",
-  "name": "project",
-  "version": "v2",
-  "contracts": {
-    "StableToken": "StableToken"
-  }
-}
