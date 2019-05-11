@@ -13,12 +13,12 @@ contract StableToken is Initializable {
     mapping(address => uint) public balances;
 
     //Introduced in version v2
-    address public admin;
+    address public minter;
 
     event Transfer(address indexed _from, address indexed _to, uint256 _value);
 
-    modifier onlyAdmin() {
-        require(msg.sender == admin);
+    modifier onlyMinter() {
+        require(msg.sender == minter);
         _;
     }
 
@@ -50,17 +50,17 @@ contract StableToken is Initializable {
         return true;
     }
 
-    function initializeAdmin(address _admin) public {
-        require(admin == address(0));
-        admin = _admin;
+    function initializeMinter(address _minter) public {
+        require(minter == address(0));
+        minter = _minter;
     }
 
-    function mint(uint _newTokens) public onlyAdmin {
+    function mint(uint _newTokens) public onlyMinter {
         uint tempTotalSupply = totalSupply + _newTokens;
         require(tempTotalSupply >= totalSupply);
 
         totalSupply += _newTokens;
-        balances[admin] += _newTokens;
+        balances[minter] += _newTokens;
     }
 
     //Rest of the code
