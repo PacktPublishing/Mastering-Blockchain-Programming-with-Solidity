@@ -12,6 +12,16 @@ contract StableToken is Initializable {
     uint public totalSupply;
     mapping(address => uint) public balances;
 
+    //Introduced in version v2
+    address public admin;
+
+    event Transfer(address indexed _from, address indexed _to, uint256 _value);
+
+    modifier onlyAdmin() {
+        require(msg.sender == admin);
+        _;
+    }
+
     function initialize(
         address _owner,
         string memory _name,
@@ -30,12 +40,28 @@ contract StableToken is Initializable {
         balances[owner] += tokensToMint;
     }
 
-    //DO NOT USE THIS IN PRODUCTION
+    //Fixed integer overflow issue in v2
     function transfer(address _to, uint _amount) public returns (bool) {
+        require(balances[msg.sender] >= _amount);
         balances[msg.sender] -= _amount;
         balances[_to] += _amount;
+
+        emit Transfer(msg.sender, _to, _amount);
+        return true;
     }
 
-    //...
+    function initializeAdmin(address _admin) public {
+        require(admin == address(0));
+        admin = _admin;
+    }
 
+    function mint(uint _newTokens) public onlyAdmin {
+        uint tempTotalSupply = totalSupply + _newTokens;
+        require(tempTotalSupply >= totalSupply);
+
+        totalSupply += _newTokens;
+        balances[admin] += _newTokens;
+    }
+
+    //Rest of the code
 }

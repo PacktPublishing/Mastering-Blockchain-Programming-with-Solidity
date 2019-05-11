@@ -1,11 +1,11 @@
 {
   "contracts": {
     "StableToken": {
-      "address": "0x27f1D83Ec12a8deB21742B5CE86d08FDEB60FFE6",
-      "constructorCode": "608060405234801561001057600080fd5b50610a43806100206000396000f3fe",
-      "bodyBytecodeHash": "5ffd9b501271c0dde9085eed3e0d39e12a6c399380f23d193326808db67573d1",
-      "localBytecodeHash": "9f3b142422dcb699f1b041e81a13c0898f6a239435c8aaed8703a087dff52ba5",
-      "deployedBytecodeHash": "9f3b142422dcb699f1b041e81a13c0898f6a239435c8aaed8703a087dff52ba5",
+      "address": "0xC5E675373c6F0A6162F0985C6df540B2d8013BBf",
+      "constructorCode": "608060405234801561001057600080fd5b50610de2806100206000396000f3fe",
+      "bodyBytecodeHash": "938122f4d1764f1374bd699b217e843a83ef5301c03692052921de1f642aeb30",
+      "localBytecodeHash": "b64cd4a7a0a52408ac9c137567825b31eee8aa855921d8c8ed5c013e7476ffcd",
+      "deployedBytecodeHash": "b64cd4a7a0a52408ac9c137567825b31eee8aa855921d8c8ed5c013e7476ffcd",
       "types": {
         "t_bool": {
           "id": "t_bool",
@@ -51,7 +51,7 @@
           "contract": "Initializable",
           "path": "zos-lib/contracts/Initializable.sol",
           "label": "initialized",
-          "astId": 154,
+          "astId": 245,
           "type": "t_bool",
           "src": "757:24:2"
         },
@@ -59,7 +59,7 @@
           "contract": "Initializable",
           "path": "zos-lib/contracts/Initializable.sol",
           "label": "initializing",
-          "astId": 156,
+          "astId": 247,
           "type": "t_bool",
           "src": "876:25:2"
         },
@@ -67,7 +67,7 @@
           "contract": "Initializable",
           "path": "zos-lib/contracts/Initializable.sol",
           "label": "______gap",
-          "astId": 205,
+          "astId": 296,
           "type": "t_array:50<t_uint256>",
           "src": "1891:29:2"
         },
@@ -118,6 +118,14 @@
           "astId": 75,
           "type": "t_mapping<t_uint256>",
           "src": "250:40:1"
+        },
+        {
+          "contract": "StableToken",
+          "path": "contracts/StableToken.sol",
+          "label": "admin",
+          "astId": 77,
+          "type": "t_address",
+          "src": "328:20:1"
         }
       ],
       "warnings": {
@@ -136,13 +144,13 @@
     "project/StableToken": [
       {
         "address": "0xF2A348783dC30b8219854b647fA157448256deeE",
-        "version": "v1",
-        "implementation": "0x27f1D83Ec12a8deB21742B5CE86d08FDEB60FFE6"
+        "version": "v2",
+        "implementation": "0x802E0e4E3fd3E0b4A0adB1A201DE453A128916B0"
       }
     ]
   },
   "zosversion": "2.2",
-  "version": "v1",
+  "version": "v2",
   "proxyAdmin": {
     "address": "0x316C3A2047438e7951566B48F4dA154281F12c84"
   }
