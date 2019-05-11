@@ -11,5 +11,9 @@
     "url": "git://github.com/PacktPublishing/Mastering-Solidity.git"
   },
   "author": "Jitendra Chittoda",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "zos": "^2.2.3",
+    "zos-lib": "^2.2.3"
+  }
 }
