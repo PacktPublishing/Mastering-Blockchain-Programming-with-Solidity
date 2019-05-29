@@ -2,6 +2,9 @@ pragma solidity ^0.5.0;
 
 import "zos-lib/contracts/Initializable.sol";
 
+/**
+ * StableToken contract version v2
+ */
 contract StableToken is Initializable {
 
     string public name;
