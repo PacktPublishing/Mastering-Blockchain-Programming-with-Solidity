@@ -34,6 +34,7 @@ contract StableToken is Initializable {
     }
 
     //DO NOT USE THIS IN PRODUCTION
+    //Integer overflow possible
     function transfer(address _to, uint _amount) public returns (bool) {
         balances[msg.sender] -= _amount;
         balances[_to] += _amount;
