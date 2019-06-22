@@ -1,0 +1,89 @@
+Compiling your contracts...
+===========================
+> Everything is up to date, there is nothing to compile.
+
+Starting migrations...
+======================
+> Network name: 'rinkeby'
+> Network id: 4
+> Block gas limit: 0x6acfc0
+
+1_initial_migration.js
+======================
+
+   Deploying 'Migrations'
+   ----------------------
+   > transaction hash: 0x85fc5089f54ae26ab73198f0550ef24beeb0229b3beea91640f856109ffe1f5a
+   > Blocks: 1 Seconds: 13
+   > contract address: 0x8f986A1EB6185b0039ccA6d6686c9Df7d8794B10
+   > block number: 4489054
+   > block timestamp: 1559465484
+   > account: 0x33978ED1D8c28112f1a4f57F5a3d64d5ff3a802F
+   > balance: 9.991932538197947632
+   > gas used: 223519
+   > gas price: 10 gwei
+   > value sent: 0 ETH
+   > total cost: 0.00223519 ETH
+
+   Pausing for 2 confirmations...
+   ------------------------------
+   > confirmation number: 1 (block: 4489055)
+   > confirmation number: 2 (block: 4489056)
+
+   > Saving migration to chain.
+   > Saving artifacts
+   -------------------------------------
+   > Total cost: 0.00223519 ETH
+
+
+2_deployCrowdsale.js
+====================
+
+   Deploying 'MSTToken'
+   --------------------
+   > transaction hash: 0xbae55bc610f2ee1760bff6154d80580757a3c4f9877649ccc2b1a00ffcaa3be4
+   > Blocks: 0 Seconds: 5
+   > contract address: 0xd4d81EB4e1C443450cb91E920aB5cb7d6F795bFF
+   > block number: 4489058
+   > block timestamp: 1559465544
+   > account: 0x33978ED1D8c28112f1a4f57F5a3d64d5ff3a802F
+   > balance: 9.979655448197947632
+   > gas used: 1185780
+   > gas price: 10 gwei
+   > value sent: 0 ETH
+   > total cost: 0.0118578 ETH
+
+   Pausing for 2 confirmations...
+   ------------------------------
+   > confirmation number: 1 (block: 4489059)
+   > confirmation number: 2 (block: 4489060)
+
+   Deploying 'MSTCrowdsale'
+   ------------------------
+   > transaction hash: 0x25a424e3be453f143709ceb96dcd44fb1bdd48cf73eed0ec3ca83e38c717c455
+   > Blocks: 1 Seconds: 9
+   > contract address: 0xd9F5E569d8D24C5473CcC7B7061f3795b1347132
+   > block number: 4489061
+   > block timestamp: 1559465589
+   > account: 0x33978ED1D8c28112f1a4f57F5a3d64d5ff3a802F
+   > balance: 9.974029568197947632
+   > gas used: 562588
+   > gas price: 10 gwei
+   > value sent: 0 ETH
+   > total cost: 0.00562588 ETH
+
+   Pausing for 2 confirmations...
+   ------------------------------
+   > confirmation number: 1 (block: 4489062)
+   > confirmation number: 2 (block: 4489063)
+
+   > Saving migration to chain.
+   > Saving artifacts
+   -------------------------------------
+   > Total cost: 0.01748368 ETH
+
+
+Summary
+=======
+> Total deployments: 3
+> Final cost: 0.01971887 ETH
