@@ -1,0 +1,302 @@
+├─ type: SourceUnit
+└─ children
+   ├─ 0
+   │  ├─ type: PragmaDirective
+   │  ├─ name: solidity
+   │  └─ value: ^0.5.0
+   └─ 1
+      ├─ type: ContractDefinition
+      ├─ name: IERC20
+      ├─ baseContracts
+      ├─ subNodes
+      │  ├─ 0
+      │  │  ├─ type: FunctionDefinition
+      │  │  ├─ name: transfer
+      │  │  ├─ parameters
+      │  │  │  ├─ type: ParameterList
+      │  │  │  └─ parameters
+      │  │  │     ├─ 0
+      │  │  │     │  ├─ type: Parameter
+      │  │  │     │  ├─ typeName
+      │  │  │     │  │  ├─ type: ElementaryTypeName
+      │  │  │     │  │  └─ name: address
+      │  │  │     │  ├─ name: to
+      │  │  │     │  ├─ storageLocation
+      │  │  │     │  ├─ isStateVar: false
+      │  │  │     │  └─ isIndexed: false
+      │  │  │     └─ 1
+      │  │  │        ├─ type: Parameter
+      │  │  │        ├─ typeName
+      │  │  │        │  ├─ type: ElementaryTypeName
+      │  │  │        │  └─ name: uint256
+      │  │  │        ├─ name: value
+      │  │  │        ├─ storageLocation
+      │  │  │        ├─ isStateVar: false
+      │  │  │        └─ isIndexed: false
+      │  │  ├─ returnParameters
+      │  │  │  ├─ type: ParameterList
+      │  │  │  └─ parameters
+      │  │  │     └─ 0
+      │  │  │        ├─ type: Parameter
+      │  │  │        ├─ typeName
+      │  │  │        │  ├─ type: ElementaryTypeName
+      │  │  │        │  └─ name: bool
+      │  │  │        ├─ name
+      │  │  │        ├─ storageLocation
+      │  │  │        ├─ isStateVar: false
+      │  │  │        └─ isIndexed: false
+      │  │  ├─ body
+      │  │  ├─ visibility: external
+      │  │  ├─ modifiers
+      │  │  ├─ isConstructor: false
+      │  │  └─ stateMutability
+      │  ├─ 1
+      │  │  ├─ type: FunctionDefinition
+      │  │  ├─ name: approve
+      │  │  ├─ parameters
+      │  │  │  ├─ type: ParameterList
+      │  │  │  └─ parameters
+      │  │  │     ├─ 0
+      │  │  │     │  ├─ type: Parameter
+      │  │  │     │  ├─ typeName
+      │  │  │     │  │  ├─ type: ElementaryTypeName
+      │  │  │     │  │  └─ name: address
+      │  │  │     │  ├─ name: spender
+      │  │  │     │  ├─ storageLocation
+      │  │  │     │  ├─ isStateVar: false
+      │  │  │     │  └─ isIndexed: false
+      │  │  │     └─ 1
+      │  │  │        ├─ type: Parameter
+      │  │  │        ├─ typeName
+      │  │  │        │  ├─ type: ElementaryTypeName
+      │  │  │        │  └─ name: uint256
+      │  │  │        ├─ name: value
+      │  │  │        ├─ storageLocation
+      │  │  │        ├─ isStateVar: false
+      │  │  │        └─ isIndexed: false
+      │  │  ├─ returnParameters
+      │  │  │  ├─ type: ParameterList
+      │  │  │  └─ parameters
+      │  │  │     └─ 0
+      │  │  │        ├─ type: Parameter
+      │  │  │        ├─ typeName
+      │  │  │        │  ├─ type: ElementaryTypeName
+      │  │  │        │  └─ name: bool
+      │  │  │        ├─ name
+      │  │  │        ├─ storageLocation
+      │  │  │        ├─ isStateVar: false
+      │  │  │        └─ isIndexed: false
+      │  │  ├─ body
+      │  │  ├─ visibility: external
+      │  │  ├─ modifiers
+      │  │  ├─ isConstructor: false
+      │  │  └─ stateMutability
+      │  ├─ 2
+      │  │  ├─ type: FunctionDefinition
+      │  │  ├─ name: transferFrom
+      │  │  ├─ parameters
+      │  │  │  ├─ type: ParameterList
+      │  │  │  └─ parameters
+      │  │  │     ├─ 0
+      │  │  │     │  ├─ type: Parameter
+      │  │  │     │  ├─ typeName
+      │  │  │     │  │  ├─ type: ElementaryTypeName
+      │  │  │     │  │  └─ name: address
+      │  │  │     │  ├─ name: from
+      │  │  │     │  ├─ storageLocation
+      │  │  │     │  ├─ isStateVar: false
+      │  │  │     │  └─ isIndexed: false
+      │  │  │     ├─ 1
+      │  │  │     │  ├─ type: Parameter
+      │  │  │     │  ├─ typeName
+      │  │  │     │  │  ├─ type: ElementaryTypeName
+      │  │  │     │  │  └─ name: address
+      │  │  │     │  ├─ name: to
+      │  │  │     │  ├─ storageLocation
+      │  │  │     │  ├─ isStateVar: false
+      │  │  │     │  └─ isIndexed: false
+      │  │  │     └─ 2
+      │  │  │        ├─ type: Parameter
+      │  │  │        ├─ typeName
+      │  │  │        │  ├─ type: ElementaryTypeName
+      │  │  │        │  └─ name: uint256
+      │  │  │        ├─ name: value
+      │  │  │        ├─ storageLocation
+      │  │  │        ├─ isStateVar: false
+      │  │  │        └─ isIndexed: false
+      │  │  ├─ returnParameters
+      │  │  │  ├─ type: ParameterList
+      │  │  │  └─ parameters
+      │  │  │     └─ 0
+      │  │  │        ├─ type: Parameter
+      │  │  │        ├─ typeName
+      │  │  │        │  ├─ type: ElementaryTypeName
+      │  │  │        │  └─ name: bool
+      │  │  │        ├─ name
+      │  │  │        ├─ storageLocation
+      │  │  │        ├─ isStateVar: false
+      │  │  │        └─ isIndexed: false
+      │  │  ├─ body
+      │  │  ├─ visibility: external
+      │  │  ├─ modifiers
+      │  │  ├─ isConstructor: false
+      │  │  └─ stateMutability
+      │  ├─ 3
+      │  │  ├─ type: FunctionDefinition
+      │  │  ├─ name: totalSupply
+      │  │  ├─ parameters
+      │  │  │  ├─ type: ParameterList
+      │  │  │  └─ parameters
+      │  │  ├─ returnParameters
+      │  │  │  ├─ type: ParameterList
+      │  │  │  └─ parameters
+      │  │  │     └─ 0
+      │  │  │        ├─ type: Parameter
+      │  │  │        ├─ typeName
+      │  │  │        │  ├─ type: ElementaryTypeName
+      │  │  │        │  └─ name: uint256
+      │  │  │        ├─ name
+      │  │  │        ├─ storageLocation
+      │  │  │        ├─ isStateVar: false
+      │  │  │        └─ isIndexed: false
+      │  │  ├─ body
+      │  │  ├─ visibility: external
+      │  │  ├─ modifiers
+      │  │  ├─ isConstructor: false
+      │  │  └─ stateMutability: view
+      │  ├─ 4
+      │  │  ├─ type: FunctionDefinition
+      │  │  ├─ name: balanceOf
+      │  │  ├─ parameters
+      │  │  │  ├─ type: ParameterList
+      │  │  │  └─ parameters
+      │  │  │     └─ 0
+      │  │  │        ├─ type: Parameter
+      │  │  │        ├─ typeName
+      │  │  │        │  ├─ type: ElementaryTypeName
+      │  │  │        │  └─ name: address
+      │  │  │        ├─ name: who
+      │  │  │        ├─ storageLocation
+      │  │  │        ├─ isStateVar: false
+      │  │  │        └─ isIndexed: false
+      │  │  ├─ returnParameters
+      │  │  │  ├─ type: ParameterList
+      │  │  │  └─ parameters
+      │  │  │     └─ 0
+      │  │  │        ├─ type: Parameter
+      │  │  │        ├─ typeName
+      │  │  │        │  ├─ type: ElementaryTypeName
+      │  │  │        │  └─ name: uint256
+      │  │  │        ├─ name
+      │  │  │        ├─ storageLocation
+      │  │  │        ├─ isStateVar: false
+      │  │  │        └─ isIndexed: false
+      │  │  ├─ body
+      │  │  ├─ visibility: external
+      │  │  ├─ modifiers
+      │  │  ├─ isConstructor: false
+      │  │  └─ stateMutability: view
+      │  ├─ 5
+      │  │  ├─ type: FunctionDefinition
+      │  │  ├─ name: allowance
+      │  │  ├─ parameters
+      │  │  │  ├─ type: ParameterList
+      │  │  │  └─ parameters
+      │  │  │     ├─ 0
+      │  │  │     │  ├─ type: Parameter
+      │  │  │     │  ├─ typeName
+      │  │  │     │  │  ├─ type: ElementaryTypeName
+      │  │  │     │  │  └─ name: address
+      │  │  │     │  ├─ name: owner
+      │  │  │     │  ├─ storageLocation
+      │  │  │     │  ├─ isStateVar: false
+      │  │  │     │  └─ isIndexed: false
+      │  │  │     └─ 1
+      │  │  │        ├─ type: Parameter
+      │  │  │        ├─ typeName
+      │  │  │        │  ├─ type: ElementaryTypeName
+      │  │  │        │  └─ name: address
+      │  │  │        ├─ name: spender
+      │  │  │        ├─ storageLocation
+      │  │  │        ├─ isStateVar: false
+      │  │  │        └─ isIndexed: false
+      │  │  ├─ returnParameters
+      │  │  │  ├─ type: ParameterList
+      │  │  │  └─ parameters
+      │  │  │     └─ 0
+      │  │  │        ├─ type: Parameter
+      │  │  │        ├─ typeName
+      │  │  │        │  ├─ type: ElementaryTypeName
+      │  │  │        │  └─ name: uint256
+      │  │  │        ├─ name
+      │  │  │        ├─ storageLocation
+      │  │  │        ├─ isStateVar: false
+      │  │  │        └─ isIndexed: false
+      │  │  ├─ body
+      │  │  ├─ visibility: external
+      │  │  ├─ modifiers
+      │  │  ├─ isConstructor: false
+      │  │  └─ stateMutability: view
+      │  ├─ 6
+      │  │  ├─ type: EventDefinition
+      │  │  ├─ name: Transfer
+      │  │  ├─ parameters
+      │  │  │  ├─ type: ParameterList
+      │  │  │  └─ parameters
+      │  │  │     ├─ 0
+      │  │  │     │  ├─ type: VariableDeclaration
+      │  │  │     │  ├─ typeName
+      │  │  │     │  │  ├─ type: ElementaryTypeName
+      │  │  │     │  │  └─ name: address
+      │  │  │     │  ├─ name: from
+      │  │  │     │  ├─ isStateVar: false
+      │  │  │     │  └─ isIndexed: true
+      │  │  │     ├─ 1
+      │  │  │     │  ├─ type: VariableDeclaration
+      │  │  │     │  ├─ typeName
+      │  │  │     │  │  ├─ type: ElementaryTypeName
+      │  │  │     │  │  └─ name: address
+      │  │  │     │  ├─ name: to
+      │  │  │     │  ├─ isStateVar: false
+      │  │  │     │  └─ isIndexed: true
+      │  │  │     └─ 2
+      │  │  │        ├─ type: VariableDeclaration
+      │  │  │        ├─ typeName
+      │  │  │        │  ├─ type: ElementaryTypeName
+      │  │  │        │  └─ name: uint256
+      │  │  │        ├─ name: value
+      │  │  │        ├─ isStateVar: false
+      │  │  │        └─ isIndexed: false
+      │  │  └─ isAnonymous: false
+      │  └─ 7
+      │     ├─ type: EventDefinition
+      │     ├─ name: Approval
+      │     ├─ parameters
+      │     │  ├─ type: ParameterList
+      │     │  └─ parameters
+      │     │     ├─ 0
+      │     │     │  ├─ type: VariableDeclaration
+      │     │     │  ├─ typeName
+      │     │     │  │  ├─ type: ElementaryTypeName
+      │     │     │  │  └─ name: address
+      │     │     │  ├─ name: owner
+      │     │     │  ├─ isStateVar: false
+      │     │     │  └─ isIndexed: true
+      │     │     ├─ 1
+      │     │     │  ├─ type: VariableDeclaration
+      │     │     │  ├─ typeName
+      │     │     │  │  ├─ type: ElementaryTypeName
+      │     │     │  │  └─ name: address
+      │     │     │  ├─ name: spender
+      │     │     │  ├─ isStateVar: false
+      │     │     │  └─ isIndexed: true
+      │     │     └─ 2
+      │     │        ├─ type: VariableDeclaration
+      │     │        ├─ typeName
+      │     │        │  ├─ type: ElementaryTypeName
+      │     │        │  └─ name: uint256
+      │     │        ├─ name: value
+      │     │        ├─ isStateVar: false
+      │     │        └─ isIndexed: false
+      │     └─ isAnonymous: false
+      └─ kind: interface
