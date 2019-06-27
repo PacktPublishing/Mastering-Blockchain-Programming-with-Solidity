@@ -4,12 +4,7 @@ import "openzeppelin-solidity/contracts/token/ERC20/IERC20.sol";
 
 contract LoanContract {
 
-    enum LoanState {
-        None,
-        Initiated,
-        Funded,
-        Repayment,
-        Finished
+    enum LoanState { NONE, INITIATED, COLLATERAL_RCVD, FUNDED, REPAYMENT, FINISHED
     }
 
     address public borrower;
@@ -36,7 +31,7 @@ contract LoanContract {
 
     constructor(IERC20 _token, uint _collateralAmount, uint _loanAmount)
         public
-        transitionToState(LoanState.Initiated)
+        transitionToState(LoanState.INITIATED)
     {
         borrower = msg.sender;
         token = _token;
@@ -47,8 +42,8 @@ contract LoanContract {
     function putCollateral()
         public
         onlyBorrower
-        atState(LoanState.Initiated)
-        transitionToState(LoanState.Funded)
+        atState(LoanState.INITIATED)
+        transitionToState(LoanState.COLLATERAL_RCVD)
     {
         require(IERC20(token)
             .transferFrom(borrower, address(this), collateralAmount));
