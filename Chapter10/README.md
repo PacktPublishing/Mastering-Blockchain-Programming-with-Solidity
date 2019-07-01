@@ -1,12 +1,4 @@
-To install the dependencies of the project, run the following command:
+We are using MultiSigWallet repository. To update submodule execute the below command: 
 ```bash
-npm install
+git pull && git submodule update --init --force --recursive --remote
 ```
-
-##### Compile
-```bash
-truffle compile
-```
-
-### Gnosis MultiSig Wallet
-https://github.com/gnosis/MultiSigWallet
