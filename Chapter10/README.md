@@ -1,4 +1,4 @@
 We are using MultiSigWallet repository. To update submodule execute the below command: 
 ```bash
-git pull && git submodule update --init --force --recursive --remote
+git submodule update --init --force --recursive --remote
 ```
