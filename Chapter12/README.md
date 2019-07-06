@@ -48,6 +48,7 @@ truffle test
 
 ## On Testnet using Rinkeby
 
+Don't forgot to change mnemonic secret seed present in `.secret` file with your generated one.
 ##### Deploy
 ```bash
 truffle migrate --network rinkeby
