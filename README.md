@@ -1,6 +1,6 @@
 # Mastering Blockchain Programming with Solidity 
 
-<a href="https://www.packtpub.com/uncategorized/mastering-blockchain-programming-with-solidity?utm_source=github&utm_medium=repository&utm_campaign="><img src="" alt="Mastering Blockchain Programming with Solidity " height="256px" align="right"></a>
+<a href="https://www.packtpub.com/uncategorized/mastering-blockchain-programming-with-solidity?utm_source=github&utm_medium=repository&utm_campaign="><img src="https://www.packtpub.com/media/catalog/product/cache/e4d64343b1bc593f1c5348fe05efa4a6/9/7/9781839218262-original.jpeg" alt="Mastering Blockchain Programming with Solidity " height="256px" align="right"></a>
 
 This is the code repository for [Mastering Blockchain Programming with Solidity ](https://www.packtpub.com/uncategorized/mastering-blockchain-programming-with-solidity?utm_source=github&utm_medium=repository&utm_campaign=), published by Packt.
 
