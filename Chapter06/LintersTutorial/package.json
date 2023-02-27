@@ -16,7 +16,7 @@
     "url": "git://github.com/PacktPublishing/Mastering-Solidity.git"
   },
   "devDependencies": {
-    "solidity-coverage": "^0.5.11"
+    "solidity-coverage": "^0.8.2"
   },
   "scripts": {
     "test": "mocha"
