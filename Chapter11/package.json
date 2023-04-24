@@ -13,7 +13,7 @@
   "author": "Jitendra Chittoda",
   "license": "ISC",
   "dependencies": {
-    "zos": "^2.2.3",
+    "zos": "^2.4.3",
     "zos-lib": "^2.2.3"
   }
 }
